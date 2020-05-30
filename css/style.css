@@ -60,6 +60,22 @@ body{
 	min-height: 300px;
 }
 
+.shadow::after{
+	box-shadow: inset -100px 0px 100px #222;
+	content: '';
+	/*display: block;*/
+	position: absolute;
+	min-height: 300px;
+	min-width: 305px;
+}
+
 .carousel-caption {
 	margin-bottom: 50px;
+}
+
+#carouselbutton{
+	right: 0px;
+	bottom: 0px;
+	position: absolute;
+	z-index: 1;
 }
