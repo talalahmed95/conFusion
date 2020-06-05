@@ -102,3 +102,23 @@ body{
 	position: absolute;
 	z-index: 1;
 }
+
+.modal-header
+{
+	background: $background-dark;
+
+	.modal-title
+	{
+		color: floralwhite;
+	}
+	
+	button
+	{
+		color: floralwhite;
+	}
+}
+
+.modal-body
+{
+	background: $background-pale;
+}
