@@ -1,0 +1,58 @@
+'use strict';
+
+module.exports = function(grunt)
+{
+	// Time how long tasks take. can help when optimizing build tasks
+	require('time-grunt')(grunt);
+
+	// Automatically load required Grunt tasks
+	require('jit-grunt')(grunt);
+
+	// Define the configuration for all the tasks
+	grunt.initConfig(
+	{
+		sass:
+		{
+			dist:
+			{
+				files:
+				{
+					'css/style.css': 'css/style.scss'
+				}
+			}
+		},
+
+		watch:
+		{
+			files: 'css/*.scss',
+			tasks: ['sass']
+		},
+		browserSync:
+		{
+			dev:
+			{
+				bsFiles:
+				{
+					src:
+					[
+						'css/*.css',
+						'*.html',
+						'js/*.js'
+					]
+				},
+
+				options:
+				{
+					watchTask: true,
+					server:
+					{
+						baseDir: "./"
+					}
+				}
+			}
+		}
+	});
+
+	grunt.registerTask('css', ['sass']);
+	grunt.registerTask('default', ['browserSync', 'watch']);
+}
